@@ -20,7 +20,7 @@ export const Navbar = () => {
                 className="relative h-16 flex items-center justify-between lg:border-b lg:border-green-400 lg:border-opacity-25">
                 <div className="px-2 flex items-center lg:px-0">
                     <div className="flex-shrink-0 mt-3">
-                        {/*<Image src={'/assets/images/logo.png'} height={'48px'} width={'auto'}/>*/}
+                        <Image src={'/assets/images/logo.png'} height={'48px'} width={'auto'}/>
                     </div>
                     <div className="hidden lg:block lg:ml-10">
                         <div className="flex space-x-4">
