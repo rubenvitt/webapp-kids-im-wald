@@ -28,17 +28,20 @@ export default function Home() {
                         {
                             img: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80',
                             title: 'Kindergeburtstag',
-                            page: 'geburtstag'
+                            page: 'geburtstag',
+                            description: 'Wilde Kinder erforschen mit Spiel und Abenteuer den Wald, auch in Ihrer Nähe möglich. Eine 1,5  bis 2 stündige Waldführung kostet 90,- €. Anschließend oder vorher kann ein Picknick selbst organisiert werden, eine Feuerstelle ist manchmal vorhanden. '
                         },
                         {
                             img: 'https://images.unsplash.com/photo-1501276098931-5d481df52e60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
                             title: 'Schule',
-                            page: 'schule'
+                            page: 'schule',
+                            description: 'Mit der Klasse Wald erleben – Für Schulklassen ist eine Waldführung ein spannendes und teambildendes Erlebnis.'
                         },
                         {
                             img: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80',
                             title: 'Waldbaden',
-                            page: 'waldbaden'
+                            page: 'waldbaden',
+                            description: 'Waldbaden ist die Kunst, sich mit allen Sinnen mit der Natur zu verbinden'
                         },
                     ]
                         .map((value, index) => {
@@ -55,9 +58,9 @@ export default function Home() {
                                         </div>
                                         <div
                                             className={'text-left text-gray-600 border-t border-gray-200 mt-1.5 pt-1.5'}>
-                                            Accusantium perferendis quis voluptates odit soluta excepturi est. At
-                                            quibusdam quo voluptates possimus eius atque. Amet quia rerum enim.
-                                            {index}
+                                            {
+                                                value.description ?? ''
+                                            }
                                         </div>
                                     </div>
                                 </a>
