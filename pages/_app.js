@@ -10,9 +10,7 @@ function MyApp({Component, pageProps}) {
     const {route} = useRouter();
     const propertiesTitle = usePageProperties(state => state.pageTitle);
     const foundRoute = allRoutes.find(r => r.path === route);
-    console.log('found: ', foundRoute);
     let pageTitle = foundRoute?.hideTitle ? '' : foundRoute?.title ?? propertiesTitle;
-    console.log('pageTitle', propertiesTitle);
     return <>
         <PageContainer title={pageTitle}>
             <Component {...pageProps} />
