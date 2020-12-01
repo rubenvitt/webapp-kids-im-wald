@@ -5,6 +5,7 @@ import {useRouter} from "next/router";
 import {allRoutes} from "../routes";
 import {PageContainer} from "../components/page-container.component";
 import {usePageProperties} from "../hooks/page-properties";
+import {graphcms} from "../utils/graphcms";
 
 function MyApp({Component, pageProps}) {
     const {route} = useRouter();

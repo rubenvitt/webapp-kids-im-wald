@@ -4,13 +4,34 @@ import {publicRoutes} from "../routes";
 import {useRouter} from "next/router";
 import Link from 'next/link';
 import create from "zustand";
+import {graphcms} from "../utils/graphcms";
 
 const useMobileState = create((set, get) => ({
     mobileOpen: false,
     toggleMobile: () => set(state => ({mobileOpen: !get().mobileOpen}))
 }))
 
-export const Navbar = () => {
+export async function getStaticProps() {
+    const {fixText} = await graphcms.request(
+        `
+      query { 
+        fixText(where: {textposition: FacebookLink}) {
+            content
+        }
+      }
+    `
+    );
+
+    console.log('saving as facebook: ', fixText)
+
+    return {
+        props: {
+            facebook: fixText.content
+        }
+    }
+}
+
+export const Navbar = ({facebook}) => {
     const {route} = useRouter();
     const {mobileOpen, toggleMobile} = useMobileState();
 
@@ -52,17 +73,19 @@ export const Navbar = () => {
                     </button>
                 </div>
                 <div className="hidden lg:block lg:ml-4">
-                    <div className="flex items-center">
-                        <button
-                            className="bg-green-600 flex-shrink-0 rounded-full p-1 text-green-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-600 focus:ring-white">
-                            <span className="sr-only">View notifications</span>
-                            <svg className="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                 viewBox="0 0 24 24" stroke="none" aria-hidden="true">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </button>
-                    </div>
+                    {
+                        facebook ? <div className="flex items-center">
+                            <a href={facebook}
+                               className="bg-green-600 flex-shrink-0 rounded-full p-1 text-green-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-600 focus:ring-white">
+                                <span className="sr-only">View notifications</span>
+                                <svg className="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                     viewBox="0 0 24 24" stroke="none" aria-hidden="true">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                          d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                        </div> : undefined
+                    }
                 </div>
             </div>
         </div>
@@ -76,9 +99,11 @@ export const Navbar = () => {
                     })
                 }
             </div>
-            <div className={'px-2 pt-2 space-y-1 border-t border-green-100 border-opacity-25'}>
-                <a href={'https://facebook.com'} className={`block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-green-500 hover:bg-opacity-75`}>Kids im Wald auf Facebook</a>
-            </div>
+            {
+                facebook ? <div className={'px-2 pt-2 space-y-1 border-t border-green-100 border-opacity-25'}>
+                    <a href={facebook} className={`block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-green-500 hover:bg-opacity-75`}>Kids im Wald auf Facebook</a>
+                </div> : undefined
+            }
         </div>
     </nav>
 }
