@@ -59,7 +59,7 @@ export async function getStaticPaths() {
                 offer: encodeURIComponent(offer)
             },
         })),
-        fallback: false,
+        fallback: true,
     };
 }
 
