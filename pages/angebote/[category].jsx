@@ -35,6 +35,7 @@ export async function getStaticProps({params}) {
         props: {
             category,
         },
+        revalidate: 1,
     };
 }
 
@@ -53,7 +54,7 @@ export async function getStaticPaths() {
                 category: encodeURIComponent(url)
             },
         })),
-        fallback: true,
+        fallback: false,
     };
 }
 
@@ -64,12 +65,12 @@ export default function DefaultPage({category}) {
     return (
         <>
             <div className="mb-2">
-                <div className="prose prose-sm lg:prose-lg">
+                <div className="prose max-w-none prose-sm lg:prose-lg">
                     <ReactMarkdown allowedTypes={["text", "paragraph"]} plugins={[gfm]} children={category.description} />
                 </div>
             </div>
             <div className="bg-white shadow overflow-hidden rounded-md">
-                <ul className="divide-y divide-gray-200 grid md:grid-cols-2 lg:grid-cols-3">
+                <ul className={`divide-y divide-gray-200 grid ${category?.offers.length > 2 ? 'lg:grid-cols-3 md:grid-cols-2' : ''}`}>
                     {
                         category?.offers.map(element => {
                             return <li className="lg:flex-grow lg:flex">
