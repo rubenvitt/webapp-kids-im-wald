@@ -2,6 +2,7 @@ export const publicRoutes = [
     {title: 'Startseite', path: '/', hideTitle: true},
     {title: 'Waldgeburtstage', path: '/angebote/geburtstag'},
     {title: 'Schule', path: '/angebote/schule'},
+    {title: 'Waldbaden', path: '/angebote/waldbaden'},
     {title: 'Kontakt', path: '/kontakt'}
 ]
 
