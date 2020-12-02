@@ -28,6 +28,7 @@ export async function getStaticProps() {
             categories,
             description: fixText.content,
         },
+        revalidate: 1,
     };
 }
 

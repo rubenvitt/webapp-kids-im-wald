@@ -30,6 +30,7 @@ export async function getStaticProps({params}) {
         props: {
             offer,
         },
+        revalidate: 1,
     };
 }
 
@@ -59,7 +60,7 @@ export async function getStaticPaths() {
                 offer: encodeURIComponent(offer)
             },
         })),
-        fallback: true,
+        fallback: false,
     };
 }
 
