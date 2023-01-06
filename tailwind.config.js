@@ -1,27 +1,15 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
-
+const colors = require("tailwindcss/colors");
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: [],
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      },
-      colors: {
-        ...colors
-      }
+    content: [
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {
+            colors: {
+                primary: colors.green,
+            }
+        },
     },
-  },
-  variants: {},
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/ui')({
-      layout: 'sidebar',
-    })
-  ],
+    plugins: [],
 }
