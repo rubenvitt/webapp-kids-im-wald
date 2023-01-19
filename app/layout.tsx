@@ -1,10 +1,8 @@
 import React from 'react';
 import { AppTemplate } from '../components/templates/AppTemplate';
 import '../styles/globals.css';
-import { useRouter } from 'next/navigation';
 
 export default function RootLayout({ children }: React.PropsWithChildren<{}>) {
-    const router = useRouter();
     return (
         <html lang="de" className="h-full">
             <head>
