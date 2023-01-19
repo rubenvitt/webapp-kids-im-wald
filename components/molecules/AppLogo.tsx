@@ -18,7 +18,7 @@ function Logo() {
 export function AppLogo({ clickable }: Props) {
     if (clickable) {
         return (
-            <Link href="#">
+            <Link href="/kontakt">
                 <Logo />
             </Link>
         );
