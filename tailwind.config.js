@@ -6,7 +6,7 @@ module.exports = {
             colors: {
                 ...colors,
                 primary: colors.green,
-                secondary: colors.sky,
+                secondary: colors.gray,
             },
         },
     },

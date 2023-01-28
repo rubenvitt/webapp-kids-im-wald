@@ -8,9 +8,9 @@ type Props = {
 
 export function WaldpaedagogikButton({ className }: Props) {
     return (
-        <div className={'h-6 w-6 relative' + className}>
+        <div className={'relative' + className}>
             <Link target="_blank" href="https://www.landesforsten.de/erleben/waldpaedagogik/waldpaedagogikzertifikat/">
-                <Image src={waldpaedagogikPng} alt={'Test'} height={70} />
+                <Image src={waldpaedagogikPng} alt={'Test'} height={180} />
             </Link>
         </div>
     );
