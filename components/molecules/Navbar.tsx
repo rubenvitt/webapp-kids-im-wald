@@ -1,7 +1,6 @@
 import { AppLogo } from './AppLogo';
 import React from 'react';
 import { MailButton } from './MailButton';
-import { WaldpaedagogikButton } from './WaldpaedagogikButton';
 
 type NavbarItem = {
     name: string;
@@ -14,9 +13,9 @@ export type NavbarProps = {
 
 export function Navbar({ items }: NavbarProps) {
     return (
-        <header className="bg-primary-600">
+        <header className="bg-primary-700">
             <nav className="mx-auto max-w-7xl px-6 lg:px-8" aria-label="Top">
-                <div className="flex flex-col md:flex-row bg-yellow-500 w-full items-center justify-between py-6 lg:border-none">
+                <div className="flex flex-col md:flex-row w-full items-center justify-between py-6 lg:border-none">
                     <div className="flex items-center">
                         <AppLogo clickable={true} />
                         <div className="ml-10 hidden space-x-8 lg:block">
@@ -33,7 +32,6 @@ export function Navbar({ items }: NavbarProps) {
                     </div>
                     <div className="space-x-4 flex flex-row items-center">
                         <MailButton />
-                        <WaldpaedagogikButton />
                     </div>
                 </div>
                 <div className="flex flex-wrap justify-center gap-x-6 py-4 lg:hidden">

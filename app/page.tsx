@@ -1,5 +1,6 @@
 import React from 'react';
 import { Headline } from '../components/atoms/Headline';
+import { WaldpaedagogikButton } from '../components/molecules/WaldpaedagogikButton';
 
 function angebot(title: string) {
     return { title };
@@ -20,7 +21,7 @@ const angebote = [
 export default function Home() {
     return (
         <>
-            <Headline>Test</Headline>
+            <Headline>Kids im Wald</Headline>
             <div>
                 <p>
                     Wälder sind ursprüngliche Natur auch in ihrer jetzigen, gefährdeten Form. Immer noch bergen sie
@@ -46,6 +47,8 @@ export default function Home() {
                     </div>
                 </section>
             </div>
+
+            <WaldpaedagogikButton />
         </>
     );
 }
