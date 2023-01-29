@@ -5,7 +5,7 @@ import React from 'react';
 import { NavigationItem } from '../../types/navigation';
 import { useEmailAdress } from '../../hooks/email';
 
-export function MobileMenuButtons(props: { navigation: NavigationItem[] }) {
+export function MobileMenuButtons(props: { navigation: NavigationItem[]; onPress: () => void }) {
     const mail = useEmailAdress();
     return (
         <div className="mt-6 flow-root">
@@ -14,6 +14,7 @@ export function MobileMenuButtons(props: { navigation: NavigationItem[] }) {
                     {props.navigation.map((item) => (
                         <a
                             key={item.name}
+                            onClick={props.onPress}
                             href={item.href}
                             className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-400/10"
                         >
@@ -24,9 +25,10 @@ export function MobileMenuButtons(props: { navigation: NavigationItem[] }) {
                 <div className="py-6">
                     <Link
                         href={mail()}
+                        onClick={props.onPress}
                         className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-white hover:bg-gray-400/10"
                     >
-                        <LetterIcon className="inline mr-1 h-7 w-7" aria-hidden="true" /> Kontakt
+                        <LetterIcon className="inline mr-1 h-7 w-7" aria-hidden="true" /> Email schreiben
                     </Link>
                 </div>
             </div>
