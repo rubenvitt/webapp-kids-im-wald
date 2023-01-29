@@ -12,12 +12,14 @@ function validate(name: any, email: any, message: any, phone: any, subject: any)
 }
 
 const handler: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse) => {
-    const name = req.body['full-name'];
+    const name = req.body.name;
     const email = req.body.email;
     const message = req.body.message;
     const phone = req.body.phone;
     const subject = req.body.subject;
     const now = moment().format('DD.MM.YYYY HH:mm:ss');
+
+    console.log('Received mail request', req.body);
 
     try {
         validate(name, email, message, phone, subject);
