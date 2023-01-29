@@ -8,6 +8,7 @@ import Icons8Pfeil from './icons8-pfeil.svg';
 import Icons8Pilz from './icons8-pilz.svg';
 import Icons8Schatztruhe from './icons8-schatztruhe.svg';
 import Icons8Tee from './icons8-tee.svg';
+import Icons8Versendet from './icons8-versendet.svg';
 import Icons8Wald from './icons8-wald.svg';
 import Icons8X from './icons8-x.svg';
 
@@ -30,5 +31,6 @@ export const PfeilIcon: SVG = Icons8Pfeil;
 export const PilzIcon: SVG = Icons8Pilz;
 export const SchatztruheIcon: SVG = Icons8Schatztruhe;
 export const TeeIcon: SVG = Icons8Tee;
+export const VersendetIcon: SVG = Icons8Versendet;
 export const WaldIcon: SVG = Icons8Wald;
 export const XIcon: SVG = Icons8X;
