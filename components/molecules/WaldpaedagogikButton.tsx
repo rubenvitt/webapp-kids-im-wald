@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import waldpaedagogikPng from '../../assets/img/Zertifikat Waldpädagogik.png';
+import waldpaedagogikPng from '../../assets/img/certificate.png';
 import Link from 'next/link';
 
 type Props = {

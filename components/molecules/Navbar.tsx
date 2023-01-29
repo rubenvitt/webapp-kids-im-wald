@@ -1,6 +1,6 @@
 import { AppLogo } from './AppLogo';
 import React from 'react';
-import { MailButton } from './MailButton';
+import { MailLink } from './MailLink';
 
 type NavbarItem = {
     name: string;
@@ -31,7 +31,7 @@ export function Navbar({ items }: NavbarProps) {
                         </div>
                     </div>
                     <div className="space-x-4 flex flex-row items-center">
-                        <MailButton />
+                        <MailLink />
                     </div>
                 </div>
                 <div className="flex flex-wrap justify-center gap-x-6 py-4 lg:hidden">
