@@ -1,8 +1,10 @@
+'use client';
 import { LetterIcon } from '../../assets/svg';
-import { emailAddress } from '../../variables';
+import { useEmailAdress } from '../../hooks/email';
 import Link from 'next/link';
 
 export function KontaktInformationen() {
+    const mail = useEmailAdress();
     return (
         <div className="relative overflow-hidden bg-primary-700 py-10 px-6 sm:px-10 xl:p-12">
             <div className="pointer-events-none absolute inset-0 sm:hidden" aria-hidden="true">
@@ -111,9 +113,9 @@ export function KontaktInformationen() {
                     <span className="sr-only">Email</span>
                 </dt>
                 <dd className="text-base text-primary-50">
-                    <Link className="flex" href={emailAddress({ asLink: true })}>
+                    <Link className="flex" href={mail({ asLink: true })}>
                         <LetterIcon className="h-6 w-6 flex-shrink-0 text-primary-200" aria-hidden="true" />
-                        <span className="ml-3">{emailAddress({ asLink: false })}</span>
+                        <span className="ml-3">{mail({ asLink: false })}</span>
                     </Link>
                 </dd>
             </dl>

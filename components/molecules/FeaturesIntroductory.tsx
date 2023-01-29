@@ -1,10 +1,12 @@
+'use client';
 import Image from 'next/image';
 import image from '../../assets/img/profile.jpeg';
 import Link from 'next/link';
-import { emailAddress } from '../../variables';
 import React from 'react';
+import { useEmailAdress } from '../../hooks/email';
 
 export function FeaturesIntroductory() {
+    const mail = useEmailAdress();
     return (
         <div className="mx-auto max-w-2xl sm:text-center">
             <h2 className="text-lg font-semibold leading-8 tracking-tight text-primary-600">
@@ -26,7 +28,7 @@ export function FeaturesIntroductory() {
                     und dabei eine <strong>Naturverbindung</strong> zu wecken, ist mein Ziel.
                 </p>
                 <p>
-                    Schreiben Sie mir gerne <Link href={emailAddress()}>eine Anfrage</Link>. Auch{' '}
+                    Schreiben Sie mir gerne <Link href={mail()}>eine Anfrage</Link>. Auch{' '}
                     <strong>Schulklassen oder Kindergärten</strong> erleben auf Wunsch eine tolle Zeit im Lernort Wald.
                 </p>
             </p>

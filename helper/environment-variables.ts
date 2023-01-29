@@ -4,7 +4,8 @@ export function requireEnvironmentVariable(name: string, devDefault: string): st
     if (value === undefined) {
         if (process.env.NODE_ENV === 'development') {
             console.warn(`Environment variable ${name} is not set. Using default value ${devDefault}`);
-            return devDefault;
+            throw new Error(`Environment variable ${name} is not set.`);
+            //return devDefault;
         } else {
             throw new Error(`Environment variable ${name} is not set.`);
         }
