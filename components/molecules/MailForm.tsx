@@ -1,14 +1,34 @@
 'use client';
 import React from 'react';
-import { useSearchParams } from 'next/navigation';
 import { SuccessMessage } from './SuccessMessage';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import useSwr from 'swr';
+import classNames from 'classnames';
+
+type Inputs = {
+    name: string;
+    email: string;
+    phone: string;
+    subject: string;
+    message: string;
+};
 
 export function MailForm() {
-    const searchParams = useSearchParams();
+    const { mutate } = useSwr<Inputs, { message: string }>('/api/mail', (url) => fetch(url).then((r) => r.json()));
+    const {
+        handleSubmit,
+        register,
+        formState: { errors, isSubmitting, isSubmitSuccessful },
+    } = useForm<Inputs>();
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
+        console.log(data);
+        await mutate(data);
+    };
+
     return (
         <>
-            {searchParams.get('success') && <SuccessMessage />}
-            <form action="/api/mail" method="POST" className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+            {isSubmitSuccessful && <SuccessMessage />}
+            <form onSubmit={handleSubmit(onSubmit)} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                 <div className="sm:col-span-2">
                     <label htmlFor="full-name" className="block text-sm font-medium text-gray-900">
                         Name
@@ -16,11 +36,13 @@ export function MailForm() {
                     <div className="mt-1">
                         <input
                             type="text"
-                            name="full-name"
                             id="full-name"
                             autoComplete="name"
                             className="block w-full rounded-md border-gray-300 py-3 px-4 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                            disabled={isSubmitting || isSubmitSuccessful}
+                            {...register('name', { required: true })}
                         />
+                        {errors.name && <span className="text-red-500">Dieses Feld ist erforderlich</span>}
                     </div>
                 </div>
                 <div>
@@ -30,11 +52,13 @@ export function MailForm() {
                     <div className="mt-1">
                         <input
                             id="email"
-                            name="email"
                             type="email"
                             autoComplete="email"
                             className="block w-full rounded-md border-gray-300 py-3 px-4 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                            disabled={isSubmitting || isSubmitSuccessful}
+                            {...register('email', { required: true, pattern: /\S+@\S+\.\S+/ })}
                         />
+                        {errors.email && <span className="text-red-500">Dieses Feld ist erforderlich</span>}
                     </div>
                 </div>
                 <div>
@@ -49,11 +73,12 @@ export function MailForm() {
                     <div className="mt-1">
                         <input
                             type="text"
-                            name="phone"
                             id="phone"
                             autoComplete="tel"
                             className="block w-full rounded-md border-gray-300 py-3 px-4 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                             aria-describedby="phone-optional"
+                            disabled={isSubmitting || isSubmitSuccessful}
+                            {...register('phone')}
                         />
                     </div>
                 </div>
@@ -64,10 +89,12 @@ export function MailForm() {
                     <div className="mt-1">
                         <input
                             type="text"
-                            name="subject"
                             id="subject"
                             className="block w-full rounded-md border-gray-300 py-3 px-4 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                            disabled={isSubmitting || isSubmitSuccessful}
+                            {...register('subject', { required: true })}
                         />
+                        {errors.subject && <span className="text-red-500">Dieses Feld ist erforderlich</span>}
                     </div>
                 </div>
                 <div className="sm:col-span-2">
@@ -82,20 +109,36 @@ export function MailForm() {
                     <div className="mt-1">
                         <textarea
                             id="message"
-                            name="message"
                             rows={4}
                             className="block w-full rounded-md border-gray-300 py-3 px-4 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                             aria-describedby="message-max"
                             defaultValue={''}
+                            disabled={isSubmitting || isSubmitSuccessful}
+                            {...register('message', { required: true, maxLength: 500 })}
                         />
+                        {errors.message?.type === 'required' && (
+                            <span className="text-red-500">Dieses Feld ist erforderlich</span>
+                        )}
+                        {errors.message?.type === 'maxLength' && (
+                            <span className="text-red-500">Maximale Zeichenanzahl erreicht</span>
+                        )}
                     </div>
                 </div>
                 <div className="sm:col-span-2 sm:flex sm:justify-end">
                     <button
+                        disabled={isSubmitting || isSubmitSuccessful}
                         type="submit"
-                        className="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-primary-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 sm:w-auto"
+                        className={classNames(
+                            isSubmitting && 'cursor-not-allowed',
+                            isSubmitSuccessful && 'bg-gray-500',
+                            'mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-primary-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 sm:w-auto',
+                        )}
                     >
-                        Nachricht senden
+                        {isSubmitting
+                            ? 'Wird gesendet...'
+                            : isSubmitSuccessful
+                            ? 'Nachricht gesendet'
+                            : 'Nachricht senden'}
                     </button>
                 </div>
             </form>
