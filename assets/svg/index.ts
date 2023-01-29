@@ -1,3 +1,4 @@
+import Icons8BrokenRobot from './icons8-broken-robot.svg';
 import Icons8ErsteHilfeKoffer from './icons8-erste-hilfe-koffer.svg';
 import Icons8Feuchtigkeitsmesser from './icons8-feuchtigkeitsmesser.svg';
 import Icons8Kaefer from './icons8-käfer.svg';
@@ -21,6 +22,7 @@ export interface SVGRProps {
 
 export type SVG = (props: SVGProps<SVGSVGElement> & SVGRProps) => JSX.Element;
 
+export const BrokenRobotIcon: SVG = Icons8BrokenRobot;
 export const ErsteHilfeKofferIcon: SVG = Icons8ErsteHilfeKoffer;
 export const FeuchtigkeitsmesserIcon: SVG = Icons8Feuchtigkeitsmesser;
 export const KaeferIcon: SVG = Icons8Kaefer;
