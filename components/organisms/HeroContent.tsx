@@ -4,7 +4,6 @@ import { MobileMenu } from '../molecules/MobileMenu';
 import { Navigation } from '../molecules/Navigation';
 import { HeroTitle } from '../atoms/HeroTitle';
 import { HeroText } from '../atoms/HeroText';
-import { HeroButtons } from '../atoms/HeroButtons';
 
 const navigationItems = [
     { name: 'Home', href: '/' },
@@ -24,7 +23,6 @@ export function HeroContent() {
                 <div className="text-center">
                     <HeroTitle />
                     <HeroText />
-                    <HeroButtons />
                 </div>
             </div>
         </div>

@@ -10,7 +10,8 @@ export function FeaturesIntroductory() {
     return (
         <div className="mx-auto max-w-2xl sm:text-center">
             <h2 className="text-lg font-semibold leading-8 tracking-tight text-primary-600">
-                Zertifizierte Waldpädagogin, Kursleiterin Waldbaden & Diplom-Sozialpädagogin
+                <p>Zertifizierte Waldpädagogin, Kursleiterin Waldbaden &</p>
+                <p>Diplom-Sozialpädagogin</p>
             </h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Beate Vitt</p>
             <p className="mt-2">
