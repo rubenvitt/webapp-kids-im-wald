@@ -1,8 +1,6 @@
 import flambacher from '../../assets/img/partner/flambacher.png';
-import goslar from '../../assets/img/partner/goslar.png';
 import hahnenklee from '../../assets/img/partner/hahnenklee.png';
 import djh from '../../assets/img/partner/djh.png';
-import landesforsten from '../../assets/img/partner/landesforsten.jpg';
 import pilzcoach from '../../assets/img/partner/pilzcoach.png';
 import sz from '../../assets/img/partner/sz.png';
 import waldbaden from '../../assets/img/partner/waldbaden.png';
@@ -16,19 +14,18 @@ type Partner = {
     link?: string;
 };
 const partner: Partner[] = [
-    { name: 'Flambacher', img: flambacher, link: 'https://www.flambacher.de/' },
-    { name: 'Goslar', img: goslar, link: 'https://www.goslar.de/' },
-    { name: 'Hahnenklee', img: hahnenklee, link: 'https://www.hahnenklee.de/' },
-    { name: 'Landesforsten', img: landesforsten, link: 'https://www.landesforsten.de/' },
-    { name: 'Stadt Salzgitter', img: sz, link: 'https://www.salzgitter.de/' },
     {
         name: 'Waldforum',
         img: waldforum,
         link: 'https://www.landesforsten.de/erleben/unsere-naturtalente/waldforum-riddagshausen//',
     },
-    { name: 'Waldbaden', img: waldbaden, link: 'https://www.waldbaden.de/' },
-    { name: 'Pilzcoach', img: pilzcoach, link: 'https://www.dgfm-ev.de/qualifikationen/pilzcoach/profil/' },
+    { name: 'Stadt Salzgitter', img: sz, link: 'https://www.salzgitter.de/' },
     { name: 'Deutscher Jugendherbergsverband', img: djh, link: 'https://www.jugendherberge.de/' },
+    { name: 'Hahnenklee', img: hahnenklee, link: 'https://www.hahnenklee.de/' },
+    { name: 'Flambacher', img: flambacher, link: 'https://www.flambacher.de/' },
+    { name: 'Zertifizierte Waldpädagogin', img: flambacher, link: 'https://www.flambacher.de/' },
+    { name: 'Pilzcoach', img: pilzcoach, link: 'https://www.dgfm-ev.de/qualifikationen/pilzcoach/profil/' },
+    { name: 'Waldbaden', img: waldbaden, link: 'https://www.waldbaden.de/' },
 ];
 
 export function Cloud() {
