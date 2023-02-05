@@ -3,6 +3,7 @@ import image from '../../assets/img/trees.png';
 import { HeroBackgroundGradientBottom, HeroBackgroundGradientTop } from '../atoms/HeroBackgroundGradient';
 import { HeroBackground } from '../atoms/HeroBackground';
 import { HeroContent } from './HeroContent';
+import { Citation } from '../molecules/Citation';
 
 export function Hero() {
     return (
@@ -11,6 +12,7 @@ export function Hero() {
             <HeroBackgroundGradientTop />
 
             <HeroContent />
+            <Citation />
 
             <HeroBackgroundGradientBottom />
         </div>

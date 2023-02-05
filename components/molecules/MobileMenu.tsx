@@ -13,7 +13,7 @@ export function MobileMenu(props: {
         <Dialog as="div" open={props.open} onClose={props.setOpen}>
             <Dialog.Panel
                 // focus="true"
-                className="fixed inset-0 z-10 overflow-y-auto bg-gray-900 px-6 py-6 lg:hidden"
+                className="fixed inset-0 z-10 overflow-y-auto bg-gray-200 px-6 py-6 lg:hidden"
             >
                 <MobileMenuHeader {...props} />
                 <MobileMenuButtons onPress={() => props.setOpen(false)} navigation={props.navigationItems} />

@@ -16,13 +16,17 @@ export function HeroContent() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <div className="px-6 lg:px-8">
-            <Navigation navigationItems={navigationItems} setMobileMenuOpen={setMobileMenuOpen} />
-            <MobileMenu open={mobileMenuOpen} setOpen={setMobileMenuOpen} navigationItems={navigationItems} />
-            <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-                <div className="text-center">
-                    <HeroTitle />
-                    <HeroText />
+        <div>
+            <div className="px-6 lg:px-8 pb-4 bg-yellow-500">
+                <Navigation navigationItems={navigationItems} setMobileMenuOpen={setMobileMenuOpen} />
+            </div>
+            <div className="mx-6 lg:mx-8">
+                <MobileMenu open={mobileMenuOpen} setOpen={setMobileMenuOpen} navigationItems={navigationItems} />
+                <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+                    <div className="text-center">
+                        <HeroTitle />
+                        <HeroText />
+                    </div>
                 </div>
             </div>
         </div>
