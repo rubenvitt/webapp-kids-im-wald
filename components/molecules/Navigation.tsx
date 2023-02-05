@@ -19,10 +19,10 @@ export function Navigation(props: {
             </div>
             <div className="hidden lg:flex lg:gap-x-12">
                 {props.navigationItems.map((item) => (
-                    <NavigationLink key={item.name} item={item} />
+                    <NavigationLink key={item.name} item={item} className="hover:text-primary-800" />
                 ))}
             </div>
-            <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <div className="hidden lg:flex lg:flex-1 lg:justify-end hover:text-primary-800">
                 <MailLink />
             </div>
         </nav>
