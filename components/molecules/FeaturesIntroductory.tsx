@@ -4,6 +4,7 @@ import image from '../../assets/img/profile.jpg';
 import React from 'react';
 import { useEmailAdress } from '../../hooks/email';
 import { LetterIcon, PhoneIcon } from '../../assets/svg';
+import { ContactInfo } from '../atoms/ContactInfo';
 
 export function FeaturesIntroductory() {
     const mail = useEmailAdress();
@@ -23,16 +24,8 @@ export function FeaturesIntroductory() {
                     />
                 </p>
                 <h3 className="font-bold">Kontakt</h3>
-                <p className="text-gray-500">
-                    <PhoneIcon className="inline-block w-6 h-6 mr-2" />
-                    <span className="sr-only">Telefonnummer:</span>
-                    <a href="tel:+491755236302">0175 5236302</a>
-                </p>
-                <p className="text-gray-500">
-                    <LetterIcon className="inline-block w-6 h-6 mr-2" />
-                    <span className="sr-only">E-Mail-Adresse:</span>
-                    <a href={mail({ asLink: true })}>{mail({ asLink: false })}</a>
-                </p>
+                <ContactInfo Icon={PhoneIcon} contactType="Telefonnummer" value="0175 5236302" />
+                <ContactInfo Icon={LetterIcon} contactType="E-Mail" value={mail({ asLink: false })} />
             </div>
             <div>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -75,9 +68,8 @@ export function FeaturesIntroductory() {
                     und Jugend.
                 </p>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
-                    Rufen Sie mich gerne an, ich rufe auf jeden Fall zurück, falls es einmal nicht passt: mobil{' '}
-                    <span className="sr-only">Telefonnummer:</span>
-                    <a href="tel:+491755236302">0175 5236302</a>.
+                    Rufen Sie mich gerne an, ich rufe auf jeden Fall zurück, falls es einmal nicht passt:
+                    <ContactInfo Icon={PhoneIcon} contactType="Telefonnummer" value="0175 5236302" />
                 </p>
             </div>
         </div>
