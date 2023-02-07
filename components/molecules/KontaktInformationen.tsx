@@ -1,7 +1,7 @@
 'use client';
-import { LetterIcon } from '../../assets/svg';
+import { LetterIcon, PhoneIcon } from '../../assets/svg';
 import { useEmailAdress } from '../../hooks/email';
-import Link from 'next/link';
+import { ContactInfo } from '../atoms/ContactInfo';
 
 export function KontaktInformationen() {
     const mail = useEmailAdress();
@@ -104,7 +104,7 @@ export function KontaktInformationen() {
                 </svg>
             </div>
             <h3 className="text-lg font-medium text-white">Kontaktinformationen</h3>
-            <p className="mt-6 max-w-3xl text-base text-primary-50">
+            <p className="mt-6 text-base text-primary-50">
                 Nehmen Sie gerne Kontakt mit mir auf. Egal, ob Sie Fragen zu meinem Angebot haben oder einen Termin
                 vereinbaren möchten.
             </p>
@@ -113,10 +113,18 @@ export function KontaktInformationen() {
                     <span className="sr-only">Email</span>
                 </dt>
                 <dd className="text-base text-primary-50">
-                    <Link className="flex" href={mail({ asLink: true })}>
-                        <LetterIcon className="h-6 w-6 flex-shrink-0 text-primary-200" aria-hidden="true" />
-                        <span className="ml-3">{mail({ asLink: false })}</span>
-                    </Link>
+                    <ContactInfo
+                        Icon={PhoneIcon}
+                        contactType="Telefonnummer"
+                        value="0175 5236302"
+                        className="text-primary-50 hover:text-primary-200"
+                    />
+                    <ContactInfo
+                        Icon={LetterIcon}
+                        contactType="E-Mail"
+                        value={mail({ asLink: false })}
+                        className="text-primary-50 hover:text-primary-200"
+                    />
                 </dd>
             </dl>
         </div>
