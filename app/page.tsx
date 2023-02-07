@@ -11,8 +11,8 @@ export default function Page() {
         <AppTemplate>
             <Hero />
             <Features />
-            <Kontakt />
             <Cloud />
+            <Kontakt />
             <Footer />
         </AppTemplate>
     );
