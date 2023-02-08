@@ -31,7 +31,7 @@ export function FeaturesIntroductory() {
                 <p className="mt-6 text-lg leading-8 text-gray-600">
                     Wohnhaft bin ich in Salzgitter Bad. Während meiner langjährigen Arbeit mit Kindern durfte ich
                     erleben, wie <strong>Neugier</strong> und <strong>Wissensdurst</strong> schon die Kleinsten
-                    begeistert. Eine <strong>Zeit in der Natur</strong> zu verbringen. Gelassenheit und Auszeit vom
+                    begeistert, eine <strong>Zeit in der Natur</strong> zu verbringen. Gelassenheit und Auszeit vom
                     Alltag sind wohltuend für Körper und Psyche. Auch Kindern, die als Freizeitbeschäftigung am liebsten
                     gamen, schadet der <strong>Aufenthalt im Wald</strong> nicht, im Gegenteil! Gerade von ihnen höre
                     ich oft <strong>Begeisterung</strong> bei der abschließenden Reflexion.
@@ -53,7 +53,7 @@ export function FeaturesIntroductory() {
                 <p className="mt-6 text-lg leading-8 text-gray-600">
                     Als <strong>Kursleiterin für Waldbaden – Shinrin Yoku</strong>, wie es auf japanisch heißt, begleite
                     ich Sie auf einem ruhigen, langsamen <strong>Weg zu innerer Gelassenheit</strong>. Waldbaden dauert
-                    etwa drei Stunden, wir gehen dabei in einem <strong>Tempo von weniger als 2 km</strong> in einer
+                    etwa drei Stunden, wir gehen dabei in einem <strong>Tempo von weniger als 3 km</strong> in einer
                     Stunde und nehmen dabei die Umgebung bewusst wahr. Dies hat nachweislich einen positiven Effekt auf
                     die <strong>Gesundheit</strong>. Das Zusammenwirken der Terpene in den Bäumen, der Anionen in der
                     Luft und dem Mikrobiom des Waldbodens fördert die Abwehrkräfte und stärkt das Immunsystem.
@@ -62,13 +62,12 @@ export function FeaturesIntroductory() {
                 <p className="mt-6 text-lg leading-8 text-gray-600">
                     Lebhaft und aufregend geht es zu, wenn Aktionen mit Kindern anstehen:{' '}
                     <strong>Kindergeburtstage</strong>, Projekte mit <strong>Schulklassen</strong> im Lernort Wald,{' '}
-                    <strong>KiTa</strong> Gruppen und
-                    <strong>Familienzentren</strong> können in Salzgitter kostenlos stattfinden. Dies ist möglich durch
-                    die Förderung der Stadt Salzgitter in Kooperation mit dem Ministerium für Familien, Senioren, Frauen
-                    und Jugend.
+                    <strong>KiTa</strong> Gruppen und <strong>Familienzentren</strong> können in Salzgitter kostenlos
+                    stattfinden. Dies ist möglich durch die Förderung des Projektes Natur erleben für Familien in
+                    Kooperation mit dem Ministerium für Familien, Senioren, Frauen und Jugend.
                 </p>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
-                    Rufen Sie mich gerne an, ich rufe auf jeden Fall zurück, falls es einmal nicht passt:
+                    Rufen Sie mich gerne an, ich rufe auf jeden Fall zurück.
                     <ContactInfo Icon={PhoneIcon} contactType="Telefonnummer" value="0175 5236302" />
                 </p>
             </div>

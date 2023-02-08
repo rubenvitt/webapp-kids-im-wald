@@ -15,8 +15,7 @@ export default function KindergeburtstagePage() {
             <p>
                 Ein Kindergeburtstag kann im Wald ein besonderes Erlebnis sein. Sie weisen bei der Einladung die anderen
                 Eltern auf waldgerechte Kleidung hin und packen ein kleines Picknick ein. Manchmal ist auch Grillen an
-                einer der Feuerstellen möglich. Ich hole Ihre Kindergruppe ab zu einer Waldführung. Das Thema besprechen
-                wir vorher. Ideen sind
+                einer der Feuerstellen möglich. Das Thema besprechen wir vorher. Ideen sind
             </p>
             <ul role="list">
                 <li>Waldrallye mit Schatzsuche</li>
