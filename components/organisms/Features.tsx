@@ -24,10 +24,10 @@ function FeatureList({ features }: { features: Feature[] }) {
                         <feature.icon className="h-10 w-10 rounded-full" />
                     </div>
                     <div className="min-w-0 flex-1">
-                        <a href="#" className="focus:outline-none">
+                        <Link href="#" className="focus:outline-none">
                             <span className="absolute inset-0" aria-hidden="true" />
                             <p className="text-sm font-medium text-gray-900">{feature.name}</p>
-                        </a>
+                        </Link>
                     </div>
                 </Link>
             ))}

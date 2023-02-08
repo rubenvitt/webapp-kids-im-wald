@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export function HeroButtons() {
     return (
@@ -9,9 +10,9 @@ export function HeroButtons() {
             >
                 Jetzt buchen
             </a>
-            <a href="/infos" className="text-base font-semibold leading-7 text-white">
+            <Link href="/infos" className="text-base font-semibold leading-7 text-white">
                 Weitere Informationen <span aria-hidden="true">→</span>
-            </a>
+            </Link>
         </div>
     );
 }
