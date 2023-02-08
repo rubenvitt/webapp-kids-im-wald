@@ -14,13 +14,11 @@ export default function SchulklassenPage() {
         >
             <p>
                 In Kooperation mit dem Waldforum Riddagshausen finden in Salzgitter Klassenprojekte im Lernort Wald
-                kostenlos statt. Die Bildungsangebote werden vorher abgesprochen. Beispiele sind Teambildung zur
-                Klassenfindung, Erlebnistage, biotische und abiotische Faktoren, Frühblüher, Bäume und Pflanzenökologie,
-                Tiere, Boden und nach Absprache alles, was in Ihrer Klasse Thema ist.
+                statt. Die Bildungsangebote werden vorher abgesprochen. Beispiele sind Teambildung zur Klassenfindung,
+                Erlebnistage, biotische und abiotische Faktoren, Frühblüher, Bäume und Pflanzenökologie, Tiere, Boden
+                das Klima. Die Waldführung dauert 3-4 Stunden, ein Picknick und Pause sind Bestandteil der Führungen.
             </p>
-            <Infobox>
-                Die Waldführung dauert 3-4 Stunden, ein Picknick und Pause sind Bestandteil der Führungen.
-            </Infobox>
+            <Infobox>In Salzgitter ist das Angebot mit Natur erleben für Familien kostenlos möglich</Infobox>
         </Angebot>
     );
 }
