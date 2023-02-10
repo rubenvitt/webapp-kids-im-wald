@@ -46,6 +46,7 @@ export function Cloud() {
                                             href={qualification.link}
                                             className="mt-4 ml-8 flex flex-shrink-0 flex-grow lg:ml-4 lg:flex-grow-0 block"
                                             target="_blank"
+                                            rel="noreferrer"
                                         >
                                             <Image
                                                 src={qualification.img}
@@ -74,6 +75,7 @@ export function Cloud() {
                                             href={partner.link}
                                             className="mt-4 ml-8 flex flex-shrink-0 flex-grow lg:ml-4 lg:flex-grow-0 block"
                                             target="_blank"
+                                            rel="noreferrer"
                                         >
                                             <Image src={partner.img} alt={partner.name} width={200} height={100} />
                                         </a>
