@@ -25,13 +25,13 @@ export function Breadcrumbs({ pages = [] }: BreadcrumbsProps) {
                     <li key={page.name}>
                         <div className="flex items-center">
                             <ChevronLeftRight className="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                            <Link
+                            <a
                                 href={page.href}
                                 className="ml-4 text-sm font-medium text-gray-500 hover:text-primary-700"
                                 aria-current={page.current ? 'page' : undefined}
                             >
                                 {page.name}
-                            </Link>
+                            </a>
                         </div>
                     </li>
                 ))}
