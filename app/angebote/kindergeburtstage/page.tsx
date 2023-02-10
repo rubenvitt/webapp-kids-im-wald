@@ -1,6 +1,6 @@
 import React from 'react';
 import { Angebot } from '../../../components/organisms/Angebot';
-import image from '../../../assets/img/fluss.png';
+import image from '../../../assets/img/ki-geb.jpg';
 import Infobox from '../../../components/atoms/Infobox';
 
 export default function KindergeburtstagePage() {
