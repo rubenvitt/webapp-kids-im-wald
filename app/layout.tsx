@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { AppTemplate } from '../components/templates/AppTemplate';
 import { AppNavigation } from '../components/organisms/AppNavigation';
+import React from 'react';
 
 export default function RootLayout({ children }: React.PropsWithChildren<{}>) {
     return (
