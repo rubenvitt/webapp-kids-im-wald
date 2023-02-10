@@ -7,7 +7,6 @@ import waldbaden from '../../assets/img/partner/waldbaden.png';
 import waldforum from '../../assets/img/partner/waldforum.jpg';
 import waldpaedagogin from '../../assets/img/certificate.png';
 import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
 
 type Partner = {
     name: string;
@@ -43,9 +42,10 @@ export function Cloud() {
                             {qualifications.map((qualification) => (
                                 <div key={qualification.name} className={'m-4'}>
                                     {qualification.link ? (
-                                        <Link
+                                        <a
                                             href={qualification.link}
                                             className="mt-4 ml-8 flex flex-shrink-0 flex-grow lg:ml-4 lg:flex-grow-0 block"
+                                            target="_blank"
                                         >
                                             <Image
                                                 src={qualification.img}
@@ -53,7 +53,7 @@ export function Cloud() {
                                                 width={200}
                                                 height={100}
                                             />
-                                        </Link>
+                                        </a>
                                     ) : (
                                         <div></div>
                                     )}
@@ -70,12 +70,13 @@ export function Cloud() {
                             {partner.map((partner) => (
                                 <div key={partner.name} className={'m-4'}>
                                     {partner.link ? (
-                                        <Link
+                                        <a
                                             href={partner.link}
                                             className="mt-4 ml-8 flex flex-shrink-0 flex-grow lg:ml-4 lg:flex-grow-0 block"
+                                            target="_blank"
                                         >
                                             <Image src={partner.img} alt={partner.name} width={200} height={100} />
-                                        </Link>
+                                        </a>
                                     ) : (
                                         <div></div>
                                     )}

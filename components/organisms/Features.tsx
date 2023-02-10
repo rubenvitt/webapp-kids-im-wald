@@ -2,7 +2,6 @@ import React from 'react';
 import { FeaturesIntroductory } from '../molecules/FeaturesIntroductory';
 import { Feature } from '../../types/feature';
 import { BirthdayCakeIcon, ChildrenIcon, CrowdIcon, SchoolIcon } from '../../assets/svg';
-import Link from 'next/link';
 
 const features: Feature[] = [
     { name: 'Kindergeburtstage', icon: BirthdayCakeIcon, slug: 'kindergeburtstage' },
@@ -15,7 +14,7 @@ function FeatureList({ features }: { features: Feature[] }) {
     return (
         <dl className="grid grid-cols-1 gap-x-6 gap-y-5 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:gap-x-8 lg:gap-y-5">
             {features.map((feature) => (
-                <Link
+                <a
                     key={feature.name}
                     href={`/angebote/${feature.slug}`}
                     className="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400"
@@ -27,7 +26,7 @@ function FeatureList({ features }: { features: Feature[] }) {
                         <span className="absolute inset-0" aria-hidden="true" />
                         <p className="text-sm font-medium text-gray-900">{feature.name}</p>
                     </div>
-                </Link>
+                </a>
             ))}
         </dl>
     );

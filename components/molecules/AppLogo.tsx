@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import logoPng from '../../assets/img/logo.png';
 
@@ -18,9 +17,9 @@ function Logo() {
 export function AppLogo({ clickable }: Props) {
     if (clickable) {
         return (
-            <Link href="#contact">
+            <a href="#contact">
                 <Logo />
-            </Link>
+            </a>
         );
     }
 

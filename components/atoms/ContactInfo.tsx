@@ -1,6 +1,5 @@
 import { SVG } from '../../assets/svg';
 import React from 'react';
-import Link from 'next/link';
 
 interface Props {
     Icon: SVG;
@@ -22,7 +21,7 @@ export function ContactInfo({ Icon, contactType, value, className = 'text-gray-5
         <p className={className}>
             <Icon className="inline-block w-6 h-6 mr-2" />
             <span className="sr-only">{contactType}:</span>
-            <Link href={createHref(value, contactType)}>{value}</Link>
+            <a href={createHref(value, contactType)}>{value}</a>
         </p>
     );
 }
