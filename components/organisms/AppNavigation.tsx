@@ -7,7 +7,7 @@ const navigationItems = [
     { name: 'Home', href: '/' },
     { name: 'Infos', href: '/#infos' },
     { name: 'Angebote', href: '/#angebote' },
-    { name: 'Kontakt', href: '/#contact' },
+    { name: 'Kontakt', href: '/π#contact' },
 ];
 
 export function AppNavigation() {
