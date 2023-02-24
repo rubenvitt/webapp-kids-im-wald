@@ -2,6 +2,7 @@ import React from 'react';
 import { FeaturesIntroductory } from '../molecules/FeaturesIntroductory';
 import { Feature } from '../../types/feature';
 import { BirthdayCakeIcon, ChildrenIcon, CrowdIcon, SchoolIcon } from '../../assets/svg';
+import { HarzKlub } from '../molecules/HarzKlub';
 
 const features: Feature[] = [
     { name: 'Kindergeburtstage', icon: BirthdayCakeIcon, slug: 'kindergeburtstage' },
@@ -40,6 +41,7 @@ export function Features() {
                 <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meine Angebote</h2>
                 <FeatureList features={features} />
             </div>
+            <HarzKlub />
         </div>
     );
 }

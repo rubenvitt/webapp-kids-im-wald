@@ -6,7 +6,6 @@ import sz from '../../assets/img/partner/sz.png';
 import waldbaden from '../../assets/img/partner/waldbaden.png';
 import waldforum from '../../assets/img/partner/waldforum.jpg';
 import waldpaedagogin from '../../assets/img/certificate.png';
-import harzklub from '../../assets/img/partner/harzklub-sz.png';
 import Image, { StaticImageData } from 'next/image';
 
 type Partner = {
@@ -15,7 +14,6 @@ type Partner = {
     link?: string;
 };
 const partner: Partner[] = [
-    { name: 'Harzklub Salzgitter', img: harzklub, link: 'https://harzklubzweigvereinsalzgitter.de/' },
     {
         name: 'Waldforum',
         img: waldforum,
