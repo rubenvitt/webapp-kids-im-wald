@@ -12,7 +12,7 @@ export default function SchulklassenPage() {
                 alt: 'KiTas im Wald',
             }}
             belowImage={
-                <video className="mt-8 rounded-2xl" controls>
+                <video className="mt-8 rounded-lg shadow-lg" controls>
                     <source src="/videos/mov-01-wlan.mp4" />
                 </video>
             }
