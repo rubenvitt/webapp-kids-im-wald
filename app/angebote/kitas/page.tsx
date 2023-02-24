@@ -11,6 +11,11 @@ export default function SchulklassenPage() {
                 src: image,
                 alt: 'KiTas im Wald',
             }}
+            belowImage={
+                <video className="mt-8 rounded-2xl" controls>
+                    <source src="/videos/mov-01-wlan.mp4" />
+                </video>
+            }
         >
             <p>
                 In der KiTa gibt es oft schon eine tolle waldpädagogische Arbeit mit vielen Projekten im Wald und auf

@@ -8,9 +8,10 @@ interface Props extends React.PropsWithChildren {
         src: StaticImageData;
         alt: string;
     };
+    belowImage?: React.ReactNode;
 }
 
-export function Angebot({ title, image, children }: Props) {
+export function Angebot({ title, image, children, belowImage: BelowImage }: Props) {
     return (
         <div className="overflow-hidden bg-white">
             <div className="relative mx-auto max-w-7xl py-16 px-6 lg:px-8">
@@ -43,6 +44,7 @@ export function Angebot({ title, image, children }: Props) {
                                     <span className="ml-2">{image.alt}</span>
                                 </figcaption>
                             </figure>
+                            {BelowImage}
                         </div>
                     </div>
                     <div className="mt-8 lg:mt-0">
