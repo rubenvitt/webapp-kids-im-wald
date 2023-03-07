@@ -19,7 +19,7 @@ const partner: Partner[] = [
         img: waldforum,
         link: 'https://www.landesforsten.de/erleben/unsere-naturtalente/waldforum-riddagshausen//',
     },
-    { name: 'Stadt Salzgitter', img: sz, link: 'https://www.salzgitter.de/' },
+    { name: 'Stadt Salzgitter', img: sz, link: 'https://www.salzgitter.de/pressemeldungen/2019/un-dekade.php/' },
     { name: 'Deutscher Jugendherbergsverband', img: djh, link: 'https://www.jugendherberge.de/' },
     { name: 'Hahnenklee', img: hahnenklee, link: 'https://www.hahnenklee.de/' },
     { name: 'Flambacher', img: flambacher, link: 'https://www.flambacher.de/' },
@@ -28,7 +28,7 @@ const partner: Partner[] = [
 const qualifications: Partner[] = [
     { name: 'Zertifizierte Waldpädagogin', img: waldpaedagogin, link: 'https://zertifikat-waldpaedagogik.de/' },
     { name: 'Pilzcoach', img: pilzcoach, link: 'https://www.dgfm-ev.de/qualifikationen/pilzcoach/profil/' },
-    { name: 'Waldbaden', img: waldbaden, link: 'https://www.waldbaden.de/' },
+    { name: 'Waldbaden', img: waldbaden },
 ];
 
 export function Cloud() {
@@ -56,7 +56,14 @@ export function Cloud() {
                                             />
                                         </a>
                                     ) : (
-                                        <div></div>
+                                        <div className="mt-4 ml-8 flex flex-shrink-0 flex-grow lg:ml-4 lg:flex-grow-0 block">
+                                            <Image
+                                                src={qualification.img}
+                                                alt={qualification.name}
+                                                width={200}
+                                                height={100}
+                                            />
+                                        </div>
                                     )}
                                 </div>
                             ))}
